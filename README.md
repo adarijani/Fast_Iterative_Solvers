@@ -8,8 +8,9 @@ The ```C++``` examples are built using ```GNU Make``` and based on ```C++``` and
 build and run the project:
 
 * A ```UNIX/Linux/POSIX``` system.
+* ```bash``` shell.
 * A ```C++``` compiler.
-* ```GNU Make``` build management.
+* ```GNU Make``` build management system.
 * A ```python``` interpreter with ```Matplotlib``` installed.
 * A ```pdf``` viewer.
 
