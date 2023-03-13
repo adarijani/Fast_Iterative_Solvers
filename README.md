@@ -11,7 +11,7 @@ The examples have been tested using MatLab 2014b on Ubuntu 12.04 with OpenCV 2.4
 
 The C++ examples are built using GNU Make and based on C++ and Python. As an example for bulding and running the Multigrid project:
 ```sh
-cd multigrid
+cd multigrid/project/code
 bash ./auto.sh
 ```
 
