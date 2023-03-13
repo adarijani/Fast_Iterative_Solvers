@@ -1,6 +1,6 @@
 # Programming Exercises for Fast Iterative Solvers
 
-This repository contains programming exercises corresponding to the lectures "Fast Iterative Solvers" held by [Prof. May](https://www.aices.rwth-aachen.de/en/people/may) at RWTH Aachen University.
+This repository contains programming exercises corresponding to the lectures "Fast Iterative Solvers" held by [Prof. Georg May](https://www.aices.rwth-aachen.de/en/people/may) at RWTH Aachen University.
 
 ## Building
 
