@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]) {
   int gamma=2;
 
   std::cout << "***************************" << '\n';
-  std::cout << "cinfig is:" << '\n';
+  std::cout << "config is:" << '\n';
   std::cout << "n=" << n << ",M=" << M << ",nu1=" << nu1;
   std::cout << ",nu2=" << nu2 << ",gamma=" << gamma << '\n';
   int N=pow(2,n);

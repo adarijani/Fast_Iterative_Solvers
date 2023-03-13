@@ -1,35 +1,23 @@
+#!/bin/bash
 make main
 declare -i n=30
-./main 4 "$n" 1 1
-mv data n4nu11nu21
-echo n4nu11nu21 | python plot.py
-echo "plot is generated for n4nu11nu21"
-./main 4 "$n" 1 2
-mv data n4nu11nu22
-echo n4nu11nu22 | python plot.py
-echo "plot is generated for n4nu11nu22"
-./main 4 "$n" 2 1
-mv data n4nu12nu21
-echo n4nu12nu21 | python plot.py
-echo "plot is generated for n4nu12nu21"
-./main 4 "$n" 2 2
-mv data n4nu12nu22
-echo n4nu12nu22 | python plot.py
-echo "plot is generated for n4nu12nu22"
-./main 7 "$n" 1 1
-mv data n7nu11nu21
-echo n7nu11nu21 | python plot.py
-echo "plot is generated for n7nu11nu21"
-./main 7 "$n" 1 2
-mv data n7nu11nu22
-echo n7nu11nu22 | python plot.py
-echo "plot is generated for n7nu11nu22"
-./main 7 "$n" 2 1
-mv data n7nu12nu21
-echo n7nu12nu21 | python plot.py
-echo "plot is generated for n7nu12nu21"
-./main 7 "$n" 2 2
-mv data n7nu12nu22
-echo n7nu12nu22 | python plot.py
-echo "plot is generated for n7nu12nu22"
+declare -i nu1=2
+declare -i nu2=2
+declare -i k=0
+
+for k in 4 7; do
+    for ((i = 1; i <= nu1; i++)); do
+        for ((j = 1; j <= nu2; j++)); do
+            ./main $k $n $i $j
+            mv data "n"$k"nu1"$i"nu2"$j
+            echo "n"$k"nu1"$i"nu2"$j | python plot.py
+            rm "n"$k"nu1"$i"nu2"$j
+            echo "plot is being generated for n"$k"nu1"$i"nu2"$j
+        done
+    done
+done
+
+mv *.pdf ../PLOTS/
 make clean
+
+declare -i n=30
