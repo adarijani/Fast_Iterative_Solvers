@@ -19,5 +19,3 @@ done
 
 mv *.pdf ../PLOTS/
 make clean
-
-declare -i n=30
