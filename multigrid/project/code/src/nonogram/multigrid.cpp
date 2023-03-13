@@ -8,13 +8,13 @@ double **AllocateMemory(int m, int n)
 {
   double **A;
   A = new double *[m];
-  for (size_t i = 0; i < m; i++)
+  for (int i = 0; i < m; i++)
   {
     A[i] = new double[n];
   }
-  for (size_t i = 0; i < m; i++)
+  for (int i = 0; i < m; i++)
   {
-    for (size_t j = 0; j < n; j++)
+    for (int j = 0; j < n; j++)
     {
       A[i][j] = 0.0;
     }
@@ -24,11 +24,13 @@ double **AllocateMemory(int m, int n)
 
 void DeallocateMemory(double **A, int m, int n)
 {
-  for (size_t i = 0; i < m; i++)
+  for (int i = 0; i < m; i++)
   {
     delete[] A[i];
   }
   delete[] A;
+  m = 0;
+  n = n+1;
 }
 
 double myf(int i, int j, double h)
@@ -118,9 +120,9 @@ void Multigrid(double **u, double **f, int N, int gamma, int nu1, int nu2)
   double **rc = Restr(r, N + 1);
   double **ec = AllocateMemory(Nc + 1, Nc + 1);
   double **rcm = AllocateMemory(Nc + 1, Nc + 1);
-  for (size_t i = 1; i < Nc; i++)
+  for (int i = 1; i < Nc; i++)
   {
-    for (size_t j = 1; j < Nc; j++)
+    for (int j = 1; j < Nc; j++)
     {
       rcm[i][j] = -1.0 * rc[i][j];
     }
@@ -138,17 +140,17 @@ void Multigrid(double **u, double **f, int N, int gamma, int nu1, int nu2)
   }
   double **el = Prolong(ec, Nc);
   double **temp = AllocateMemory(N + 1, N + 1);
-  for (size_t i = 1; i < N; i++)
+  for (int i = 1; i < N; i++)
   {
-    for (size_t j = 1; j < N; j++)
+    for (int j = 1; j < N; j++)
     {
       temp[i][j] = u[i][j] - el[i][j];
     }
   }
   smoother(temp, f, N, nu2);
-  for (size_t i = 1; i < N; i++)
+  for (int i = 1; i < N; i++)
   {
-    for (size_t j = 1; j < N; j++)
+    for (int j = 1; j < N; j++)
     {
       u[i][j] = temp[i][j];
     }

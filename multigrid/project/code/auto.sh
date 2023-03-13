@@ -1,5 +1,5 @@
 #!/bin/bash
-make main
+make all
 declare -i n=30
 declare -i nu1=2
 declare -i nu2=2
