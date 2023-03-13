@@ -1,2 +1,2 @@
-# Fast_Iterative_Solvers
+# Fast Iterative Solvers
 
